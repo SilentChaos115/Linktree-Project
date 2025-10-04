@@ -6,6 +6,7 @@
     cursor: pointer;
     object-fit: cover;
     transition: transform 200ms ease, box-shadow 200ms ease;
+    box-shadow: 8px 8px 15px rgba(0,0,0,0.5);
 }
 body{
     background-color: rgb(163, 220, 239);
@@ -39,8 +40,9 @@ body{
     text-align: center;
     margin-top: 20px;
     border: solid 2px black;
-    padding-left: 100px;
-    padding-right: 100px;
+    border-radius: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
     width: fit-content;
     margin: 0 auto;
 }
