@@ -1,0 +1,63 @@
+.profile-pic{
+    width: 200px;
+    height: 200px;
+    border-radius: 18px;
+    border: solid 4px black;
+    cursor: pointer;
+    object-fit: cover;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+body{
+    background-color: rgb(163, 220, 239);
+    text-align: center;
+}
+
+/* Fullscreen styles for the profile image */
+.profile-pic:fullscreen,
+.profile-pic:-webkit-full-screen {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    border: none;
+    object-fit: contain;
+    background-color: #000;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Make sure the element's container doesn't add unexpected styles */
+:-webkit-full-screen:root, :fullscreen:root {
+    background-color: #000;
+}
+
+/* Slight hover effect for the clickable image */
+.profile-pic:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+.contact{
+    text-align: center;
+    margin-top: 20px;
+    border: solid 2px black;
+    padding-left: 100px;
+    padding-right: 100px;
+    width: fit-content;
+    margin: 0 auto;
+}
+.contact-button {
+    padding: 12px 40px;
+    margin: 5px;
+    border: solid 2px black;
+    border-radius: 8px;
+    background-color: rgb(76, 150, 210);
+    justify-content: center;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    color: black;
+    display: inline-flex;
+    gap: 15px;
+}
+.contact-button:hover {
+    background-color: rgb(56, 130, 190);
+    color: white;
+}
