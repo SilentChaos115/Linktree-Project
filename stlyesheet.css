@@ -63,3 +63,30 @@ body{
     background-color: rgb(56, 130, 190);
     color: white;
 }
+.gradient {
+  position: fixed; /* stay in place behind content */
+  inset: -10% -10% -10% -10%;
+  pointer-events: none; /* clicks go through */
+  z-index: -1; /* behind everything */
+  width: 120%;
+  height: 120%;
+  filter: blur(60px); /* reduced blur so page not overly fuzzy */
+  animation: moveBlobs 12s ease-in-out infinite alternate;
+  background: radial-gradient(circle at 20% 30%, #2b65ff, transparent 60%),
+              radial-gradient(circle at 80% 70%, #9b00ff, transparent 60%),
+              radial-gradient(circle at 40% 80%, #00f0ff, transparent 60%),
+              radial-gradient(circle at 70% 20%, #ff00ff, transparent 60%);
+  background-blend-mode: screen;
+}
+
+@keyframes moveBlobs {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-80px, -60px) scale(1.2); /* more movement and scaling */
+  }
+  100% {
+    transform: translate(80px, 60px) scale(1);
+  }
+}
