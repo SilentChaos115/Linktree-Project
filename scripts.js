@@ -1,5 +1,5 @@
 // Toggle fullscreen for the clicked image using the Fullscreen API
-const img = document.querySelector('.profile-pic');
+const img = document.querySelector('.images');
 if (img) {
   img.addEventListener('click', async () => {
     // If document is already in fullscreen, exit

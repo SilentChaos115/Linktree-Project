@@ -26,6 +26,22 @@ body{
     box-shadow: none;
 }
 
+/* Fullscreen styles for certificate images */
+.certificates:fullscreen,
+.certificates:-webkit-full-screen,
+.Mimo:fullscreen,
+.Mimo:-webkit-full-screen {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  border: none;
+  object-fit: contain;
+  background-color: #000;
+  transform: none;
+  /* Preserve a subtle shadow when viewing the certificate fullscreen */
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
 /* Make sure the element's container doesn't add unexpected styles */
 :-webkit-full-screen:root, :fullscreen:root {
     background-color: #000;
@@ -89,4 +105,23 @@ body{
   100% {
     transform: translate(80px, 60px) scale(1);
   }
+}
+header {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.certificates, .Mimo {
+    width: 300px;
+    height: auto;
+    border-radius: 18px;
+    border: solid 4px black;
+    cursor: pointer;
+    object-fit: cover;
+    transition: transform 200ms ease, box-shadow 200ms ease;
+    box-shadow: 8px 8px 15px rgba(0,0,0,0.5);
+}  
+
+h6 {
+    font-size: 14px;
 }
