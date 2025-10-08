@@ -125,3 +125,67 @@ header {
 h6 {
     font-size: 14px;
 }
+
+.back-button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: solid 2px black;
+    border-radius: 8px;
+    background-color: rgb(76, 150, 210);
+    justify-content: center;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    color: black;
+    display: inline-flex;
+    gap: 15px;
+}
+
+/* Fixed back button in the top-left corner */
+.back-button {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 10; /* above gradient */
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: black;
+  background-color: #9b00ff;
+  border: 2px solid rgba(0,0,0,0.6);
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.15);
+}
+
+.back-button:hover {
+  background-color: rgba(76,150,210,0.95);
+  color: white;
+}
+
+/* Ensure the header content stays centered while allowing the fixed back button */
+header {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 40px; /* so content doesn't overlap fixed button */
+}
+
+ .cert-box {
+    display: block;
+    margin: 0 auto 10px auto; /* center and add small bottom gap */
+    border: solid 2px black;
+    border-radius: 12px;
+    padding: 4px 18px; /* further reduced vertical padding to shorten height */
+    width: 66%; /* almost twice as long as an inline element; responsive */
+    max-width: 800px; /* prevent it from getting too wide on large screens */
+ }
+
+/* Tighten spacing for headings inside cert-box */
+.cert-box h1 {
+  margin: 6px 0; /* small top/bottom margins */
+  font-size: 1.5rem;
+}
+.cert-box + h6, .cert-box h6 {
+  margin: 4px 0 8px 0;
+  font-size: 0.9rem;
+}
