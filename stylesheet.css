@@ -79,6 +79,38 @@ body{
     background-color: rgb(56, 130, 190);
     color: white;
 }
+
+/* Spacing for Documents and Certifications boxes added to the page */
+.documents {
+  margin-top: 18px;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: fit-content;
+}
+
+/* Bottom row: Contact and Documents side-by-side and centered */
+.bottom-row {
+  display: flex;
+  justify-content: center;
+  gap: 5px; /* small 5px gap between the two boxes */
+  margin-top: 28px;
+  flex-wrap: wrap; /* stack on very narrow screens */
+  align-items: stretch; /* make both boxes the same height */
+}
+
+.contact-left, .contact-right {
+  flex: 0 0 auto;
+}
+
+/* Ensure both contact boxes have the same visual height */
+.bottom-row .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 120px; /* ensures consistent height */
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
 .gradient {
   position: fixed; /* stay in place behind content */
   inset: -10% -10% -10% -10%;
@@ -231,11 +263,23 @@ header {
       gap: 15px; /* same gap as contact buttons */
       font-size: 0.86rem;
     line-height: 1;
+    text-decoration: none; /* remove underline */
+    -webkit-appearance: none;
+    appearance: none;
 }
 
   .button:hover {
       background-color: rgb(56, 130, 190);
       color: white;
+  }
+
+  /* Ensure links with .button keep their button appearance when visited/focused */
+  .button:visited {
+    color: black;
+  }
+  .button:focus {
+    outline: 2px solid rgba(0,0,0,0.12);
+    outline-offset: 2px;
   }
 /* Responsive: prevent center-content and button from overlapping on narrow screens */
 @media (max-width: 600px) {
