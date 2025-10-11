@@ -128,7 +128,7 @@ h6 {
 
 .back-button {
     padding: 10px 20px;
-    margin: 10px;
+    margin: 20px;
     border: solid 2px black;
     border-radius: 8px;
     background-color: rgb(76, 150, 210);
@@ -136,16 +136,9 @@ h6 {
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
     color: black;
-    display: inline-flex;
-    gap: 15px;
-}
-
-/* Fixed back button in the top-left corner */
-.back-button {
-  position: fixed;
-  top: 18px;
-  left: 18px;
-  z-index: 10; /* above gradient */
+    display: inline-block;
+    float: left;
+    clear: both;
   padding: 8px 14px;
   display: inline-flex;
   align-items: center;
