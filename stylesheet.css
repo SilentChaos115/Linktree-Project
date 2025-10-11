@@ -182,3 +182,83 @@ header {
   margin: 4px 0 8px 0;
   font-size: 0.9rem;
 }
+
+.button-container {
+  display: flex;
+  align-items: center; /* Vertically aligns the text and button */
+  width: 100%;
+  padding: 20px;
+  position: relative; /* allow absolute centering of the middle content */
+}
+
+.right-content {
+  flex: 0 0 auto; /* don't take remaining space; keep size to content */
+  display: flex;
+  justify-content: flex-end; /* Aligns the button to the right */
+  margin-left: auto; /* push this block to the far right */
+  margin-right: 18px; /* nudge the button left (closer to center than before) */
+  align-items: center;
+}
+
+.left-spacer {
+  display: none; /* not needed with absolute-centered middle */
+}
+
+.center-content {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: black;
+  white-space: nowrap; /* Prevents text from wrapping */
+  text-align: center;
+}
+
+.button {
+    /* reduced size compared to previous design (~50% smaller) */
+  /* further reduce size by ~15% */
+  padding: 3.4px 8.5px;
+  margin: 3.4px 5px;
+    border: solid 2px black;
+  border-radius: 10px;
+    background-color: rgb(76, 150, 210);
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    color: black;
+      display: inline-flex; /* match contact-button */
+      justify-content: center;
+      align-items: center;
+      gap: 15px; /* same gap as contact buttons */
+      font-size: 0.86rem;
+    line-height: 1;
+}
+
+  .button:hover {
+      background-color: rgb(56, 130, 190);
+      color: white;
+  }
+/* Responsive: prevent center-content and button from overlapping on narrow screens */
+@media (max-width: 600px) {
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+  }
+  .center-content {
+    position: static;
+    transform: none;
+    white-space: normal;
+    text-align: center;
+    padding: 0 8px;
+  }
+  .right-content {
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+  }
+  .button {
+    padding: 6px 12px; /* slightly larger touch target on small screens */
+  }
+}
