@@ -53,14 +53,14 @@ body{
     box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 .contact{
-    text-align: center;
-    margin-top: 20px;
-    border: solid 2px black;
-    border-radius: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
-    width: fit-content;
-    margin: 0 auto;
+  text-align: center;
+  border: solid 2px black;
+  border-radius: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  width: fit-content;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 .contact-button {
     padding: 12px 40px;
@@ -94,12 +94,18 @@ body{
   justify-content: center;
   gap: 5px; /* small 5px gap between the two boxes */
   margin-top: 28px;
-  flex-wrap: wrap; /* stack on very narrow screens */
+  flex-wrap: nowrap; /* do not wrap; shrink instead */
   align-items: stretch; /* make both boxes the same height */
 }
 
 .contact-left, .contact-right {
-  flex: 0 0 auto;
+  /* allow both boxes to share space and shrink as needed */
+  flex: 1 1 0%;
+  min-width: 0; /* important to allow flex children to shrink below content width */
+  box-sizing: border-box;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 /* Ensure both contact boxes have the same visual height */
@@ -110,9 +116,20 @@ body{
   min-height: 120px; /* ensures consistent height */
   padding-top: 18px;
   padding-bottom: 18px;
+  box-sizing: border-box; /* include padding when shrinking */
+  width: 100%;
+}
+
+/* Prevent child margins from collapsing with parent so box edges align precisely */
+.bottom-row .contact h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.bottom-row .contact > *:last-child {
+  margin-bottom: 0;
 }
 .gradient {
-  position: fixed; /* stay in place behind content */
+  position: absolute; /* changed from fixed so it scales with the page wrapper */
   inset: -10% -10% -10% -10%;
   pointer-events: none; /* clicks go through */
   z-index: -1; /* behind everything */
@@ -237,13 +254,9 @@ header {
 }
 
 .center-content {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
   color: black;
-  white-space: nowrap; /* Prevents text from wrapping */
   text-align: center;
+  margin: 0 auto;
 }
 
 .button {
