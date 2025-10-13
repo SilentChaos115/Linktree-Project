@@ -1,16 +1,31 @@
 .profile-pic{
-    width: 200px;
-    height: 200px;
-    border-radius: 18px;
-    border: solid 4px black;
-    cursor: pointer;
-    object-fit: cover;
-    transition: transform 200ms ease, box-shadow 200ms ease;
-    box-shadow: 8px 8px 15px rgba(0,0,0,0.5);
+  display: block; /* ensure it can be centered with auto margins */
+  margin: 0 auto;
+  width: 200px;
+  max-width: 100%;
+  height: auto; /* keep aspect ratio */
+  border-radius: 18px;
+  border: solid 4px black;
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  box-shadow: 8px 8px 15px rgba(0,0,0,0.5);
+  float: none;
 }
 body{
     background-color: rgb(163, 220, 239);
     text-align: center;
+}
+
+/* Cross-browser base fixes */
+html { box-sizing: border-box; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+*, *::before, *::after { box-sizing: inherit; }
+
+/* Ensure media (images, video) scale correctly across browsers */
+img, picture, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Fullscreen styles for the profile image */
@@ -88,6 +103,14 @@ body{
   margin: 0.6rem auto;
   padding: clamp(6px, 1.6vw, 12px) clamp(12px, 3vw, 40px);
   font-size: clamp(12px, 1.6vw, 18px);
+}
+
+/* Keep the certification/resume labels on one line when possible */
+.documents .contact-button {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 /* If box gets very narrow, reduce spacing inside to preserve fit */
