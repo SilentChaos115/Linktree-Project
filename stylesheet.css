@@ -105,21 +105,32 @@ img, picture, video {
   font-size: clamp(12px, 1.6vw, 18px);
 }
 
-/* Keep the certification/resume labels on one line when possible */
+/* Keep the certification/resume labels on one line even on mobile */
 .documents .contact-button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
+  min-width: min-content; /* Ensure button width is at least as wide as content */
+  width: auto; /* Allow button to be wider than default */
 }
 
-/* If box gets very narrow, reduce spacing inside to preserve fit */
+/* If box gets very narrow, adjust spacing while preserving text integrity */
 @media (max-width: 420px) {
   .bottom-row .contact .contact-button,
   .bottom-row .contact .button {
     padding: 6px 10px;
     font-size: 12px;
-    max-width: 100%;
+    max-width: none;
+    width: auto;
+    min-width: min-content;
+  }
+  
+  .documents .contact-button {
+    width: auto;
+    min-width: min-content;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 .contact-button {
